@@ -8,7 +8,7 @@ Please rank this repo 5 starts if you like our job!
 
 ## Usage
 
-This module deploys cognito user groups and outputs them as a list to be used as reference when you need to associate users to it with terraform. It requires an existing cognito user pool at least, the resource needs it's ID. All other attributes are within a list variable and may be considered dynamic, including the 'role_arn'.
+This module deploys cognito user groups and outputs them as a list to be used as reference when you need to associate users to it with terraform. It requires an existing cognito user pool and it's ID. All other attributes are within a list variable and may be considered dynamic, including the 'role_arn'.
 
 For more information about cognito's user groups role arn, you may check on [AWS Documentation](https://docs.aws.amazon.com/cognito/latest/developerguide/role-based-access-control.html)
 
@@ -18,9 +18,9 @@ Considering our module's main, it's important to use the variable 'USER_GROUP_AT
   USER_GROUP_ATTRIBUTES_LIST = [
     {
         name         = "Place your group name here" # required
-        description  = "Place your description here" # might be null
+        description  = "Place your description here" # can be null
         precedence   = Must be number or null 
-        role_arn     = "Place your role arn for this group here" # might be null
+        role_arn     = "Place your role arn for this group here" # can be null
     }  
   ]
 ```
